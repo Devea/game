@@ -1,5 +1,5 @@
-// přidej tady cokoliv tě napadne, jak by měla hra vypadat
-// * - čeká na schválení
+>// přidej tady cokoliv tě napadne, jak by měla hra vypadat
+>// * - čeká na schválení
 
 ##Téma
 * prostředí z budoucna
