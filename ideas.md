@@ -3,8 +3,8 @@
 >! = čeká na schválení
 
 ##Téma
-* prostředí z budoucna
-* meče, sekyry etc.
+* prostředí z budoucna (roboti, počítače, kabely, součástky)
+* meče, sekyry etc. (trupka)
 
 ###Lokace
 * hlavní lokace (v ní žačínáš)
@@ -39,10 +39,10 @@
 * obchodník
   * možnost založit stánek v tržnici
 
-##!Zkušenosti?
-##!Achievmenty?
-##!Crafting?
-##Inventář
+###!Zkušenosti?
+###!Achievmenty?
+###!Crafting?
+###Inventář
 * předměty budou klikatelné
 * !předměty budou mít svou 16x16 ikonku
 
