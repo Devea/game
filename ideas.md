@@ -1,17 +1,17 @@
 // přidej tady cokoliv tě napadne, jak by měla hra vypadat
 // * - čeká na schválení
 
-* ##Téma
- * prostředí z budoucna
- * meče, sekyry etc.
+##Téma
+* prostředí z budoucna
+* meče, sekyry etc.
 
-* ##Lokace
- * hlavní lokace (v ní žačínáš)
- * město
-+ automat náhodných předmětů (za zlaťák plive smetí)
- + koruna (šance 0.001%)
- + jen jedna ve hře
- + hráč s ní bude napsaný v indexu hry
+##Lokace
+###hlavní lokace (v ní žačínáš)
+* město
+    * automat náhodných předmětů (za zlaťák plive smetí)
+ * koruna (šance 0.001%)
+ * jen jedna ve hře
+ * hráč s ní bude napsaný v indexu hry
   * hlava města (robot propojený s celým městem)
    * bude zadávat úkoly
    * otázkový systém
