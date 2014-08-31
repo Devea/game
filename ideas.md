@@ -39,3 +39,11 @@
 * obchodník
   * možnost založit stánek v tržnici
 
+##!Zkušenosti?
+##!Achievmenty?
+##!Crafting?
+##Inventář
+* předměty budou klikatelné
+* !předměty budou mít svou 16x16 ikonku
+
+
