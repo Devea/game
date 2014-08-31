@@ -6,21 +6,21 @@
  * meče, sekyry etc.
 
 * ##Lokace
-* hlavní lokace (v ní žačínáš)
-*  město
-*   automat náhodných předmětů (za zlaťák plive smetí)
-*    koruna (šance 0.001%)
-*    jen jedna ve hře
-*    hráč s ní bude napsaný v indexu hry
-*   hlava města (robot propojený s celým městem)
-*    bude zadávat úkoly
-*    otázkový systém
-*    odemikáš si u něj postup za splněné otázky
-*   tržiště
-*    (hráči by si mohli vytvářet své vlastní předměty)
-*    kovárna
-*    zbrojírna
-*  les
+ * hlavní lokace (v ní žačínáš)
+ * město
+  * automat náhodných předmětů (za zlaťák plive smetí)
+   * koruna (šance 0.001%)
+   * jen jedna ve hře
+   * hráč s ní bude napsaný v indexu hry
+  * hlava města (robot propojený s celým městem)
+   * bude zadávat úkoly
+   * otázkový systém
+   * odemikáš si u něj postup za splněné otázky
+  * tržiště
+   * (hráči by si mohli vytvářet své vlastní předměty)
+   * kovárna
+   * zbrojírna
+  * les
 doupě (tady půjde farmit zlaťáky)
 aréna
 *přístav
