@@ -1,3 +1,3 @@
 ####Lokace
-*hlavní lokace (v ní žačínáš)
- *město
+* hlavní lokace (v ní žačínáš)
+ * město
