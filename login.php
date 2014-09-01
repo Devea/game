@@ -26,7 +26,7 @@ include("php/mysql_connect.php");
             <center><a href="registration.php">Are you new here?</a></center>
         </div>
         <div id="statistics">
-            <table class='table'>
+            <!--<table class='table'>
                 <caption class='caption'>statistics</caption>
                 <tr>
                     <td class='name item'>name</td>
@@ -36,7 +36,7 @@ include("php/mysql_connect.php");
             </table>
             <div id="items">
                 <table class='table'>
-                    <?php
+                    <?php/*
                     $sql=mysql_query("SELECT * FROM login ORDER BY register_date"); 
                     while($result=mysql_fetch_array($sql)){
                         // time
@@ -56,9 +56,9 @@ include("php/mysql_connect.php");
                         echo "<td class='item'>nope</td>";
                     }
                     echo "</tr>";                       
-                    }
+                    }*/
                     ?>
-                </table>
+                </table>-->
             </div>
         </div>
     </body>
