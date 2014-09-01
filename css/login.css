@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#statistics {
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    max-height: 300px;
+    overflow: auto;
+
+}
+.caption {
+    background: bisque;
+
+}
+.table {
+    width: 100%;
+}
+.item {
+    width: 33.33%;
+    background: background;
+}
