@@ -11,7 +11,6 @@
 
 #Ideas
 
-==
 
 >přidej tady cokoliv tě napadne, jak by měla hra vypadat
 
