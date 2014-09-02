@@ -13,14 +13,18 @@ include("php/mysql_connect.php");
         <div id="login">
             <form method="POST">
                 <center>
-                    <label>You can type your</label>
-                    <input type="password" size="10" placeholder="login" maxlength="10" name="login">
-                    <label>here.</label>
-
-                    <label>You can type your</label>
-                    <input type="password" size="10" placeholder="password" maxlength="10" name="password">
-                    <label>here.</label>
-                    <input type="submit" value="Lets try it!">
+                    <p>
+                        <label>You can type your</label>
+                        <input type="password" size="10" placeholder="login" maxlength="10" name="login">
+                        <label>here.</label>
+                    </p>
+                    
+                    <p>
+                        <label>You can type your</label>
+                        <input type="password" size="10" placeholder="password" maxlength="10" name="password">
+                        <label>here.</label>
+                        <input type="submit" value="Lets try it!">
+                    </p>
                 </center>
             </form>
             <center><a href="registration.php">Are you new here?</a></center>

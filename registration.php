@@ -30,6 +30,7 @@ include("php/mysql_connect.php");
             // insert
             mysql_query("INSERT INTO players (name, password, email, avatar) VALUES ('".$_POST['name']."','".sha1($_POST['password'])."','".$_POST['email']."','".$_FILES['file']['name']."')");
             move_uploaded_file($_FILES["file"]["tmp_name"], "avatars/" . $_FILES["file"]["name"]); // nefunguje na linuxech
+            echo "<script>alert('success!');</script>";
         }
         ?>
     </body>

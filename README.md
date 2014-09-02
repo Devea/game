@@ -1,13 +1,10 @@
-* vytvořeno sql
-  * login 'devea'
-  * heslo 'devea'
-  * databáze 'devea'
 
-### Budeme dělat hru v angličtině.
-### Jádro hry bude v angličtině.
+#News
 
-* Týpku musíme se domluvit na stylu kódování, ať v tom máme pořádek. 
-	* musíme komentovat všechno co půjde
+
+### Hra včetně jádra je v angličtině.
+
+>Obrázky jsou provizorní, dodělám, zvýrazním co zprovozním skener.
 
 #Ideas
 
@@ -35,6 +32,9 @@
       * (hráči by si mohli vytvářet své vlastní předměty)
       * kovárna
       * zbrojírna
+    * !výstava
+    	* schválení předmětů hráčů
+    	* aukce
   * les
     * doupě (tady půjde farmit zlaťáky)
   * aréna
@@ -47,17 +47,20 @@
     * mnoho místností (jednotlivé stránky)
     * mohl bys tady narazit na ostatní hráče        
 
-###Povolání?
+###Povolání
 * kovář 
   * možnost vytvořit nový předmět a prezentovat ho pro ostatní v tržnici
 * obchodník
   * možnost založit stánek v tržnici
 
-###Zkušenosti?
-###Achievmenty?
-###Crafting?
+###Zkušenosti
+###Achievmenty
+* získáš za ně zlato
+###Crafting
+###!Aukce
+###!Hunger bar
 ###Inventář
-* předměty budou klikatelné
-* !předměty budou mít svou 16x16 ikonku  ×
-###!Housing
+* předměty budou klikatelné, přetahovatelné
+* předměty budou mít svou 32x32 ikonku
+###Housing
 
