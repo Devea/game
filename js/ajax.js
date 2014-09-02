@@ -16,6 +16,7 @@ function get(get ,func, param){
 	xhrs[i].onreadystatechange=function(){
 		if (this.readyState==4 && this.status==200){
 			func(this.responseXML,this.funcParam);
+			console.log(this.responseXML.querySelector("debug").innerHTML);
 			xhrs.splice(this.i,1);
 		}
 	}
@@ -40,6 +41,7 @@ function post(get, post, func, param){
 	xhrs[i].onreadystatechange=function(){
 		if (this.readyState==4 && this.status==200){
 			func(this.responseXML,this.funcParam);
+			console.log(this.responseXML.querySelector("debug").innerHTML);
 			xhrs.splice(this.i,1);
 		}
 	}
