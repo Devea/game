@@ -11,12 +11,25 @@
 	<script type="text/javascript" src="js/ajax.js"></script>
 </head>
 <body>
-	<div id="login">
+	<div id="login"></div>
 	<script type="text/javascript">
 		var div = document.querySelector("#login");
-		get("?f=logged",function(r){
-			if(r.getElementByTagName("logged").innerHTML == "true"){
-				
+		
+		function login(user, pass){
+			post("f=login", "user="+user+"&pass="+pass, function(r){
+				if(r.querySelector("data").innerHTML == "true"){
+					div.innerHTML = "logged";
+				}
+				alert(r.querySelector("message").innerHTML);
+			});
+			return false;
+		}
+		
+		get("f=logged",function(r){
+			if(r.querySelector("logged").innerHTML == "true"){
+				div.innerHTML = "You're logged in!";
+			} else {
+				div.innerHTML = getContent("html/login.html");
 			}
 		});
 	</script>
