@@ -7,12 +7,17 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="robots" content="all">
-    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 	<script type="text/javascript" src="js/ajax.js"></script>
 	<script type="text/javascript" src="js/account.js"></script>
 </head>
 <body>
-	<div id="login"></div>
+    <panel>
+        
+    </panel>
+    <main>
+		<div id="login"></div>
+    </main>
 	<script type="text/javascript">
 		account.init();
 	</script>
@@ -21,8 +26,8 @@
 <?php
     /*session_start();
     if(isset($_SESSION["login"])){
-    include("php/mysql_connect.php");
-    include("php/functions.php");
+        include("php/mysql_connect.php");
+        include("php/functions.php");
     }*/
 	
 ?>
