@@ -3,8 +3,8 @@
   * heslo 'devea'
   * databáze 'devea'
 
-### !Budeme dělat hru v angličtině.
-### !Jádro hry bude v angličtině.
+### Budeme dělat hru v angličtině.
+### Jádro hry bude v angličtině.
 
 * Týpku musíme se domluvit na stylu kódování, ať v tom máme pořádek. 
 	* musíme komentovat všechno co půjde
@@ -27,36 +27,37 @@
          * koruna (šance 0.001%)
             * jen jedna ve hře
             * hráč s ní bude napsaný v indexu hry
-      * !hlava města (robot propojený s celým městem)
+      * hlava města (robot propojený s celým městem)
         * bude zadávat úkoly
         * otázkový systém
         * odemikáš si u něj postup za splněné otázky
-    * !tržiště
+    * tržiště
       * (hráči by si mohli vytvářet své vlastní předměty)
       * kovárna
       * zbrojírna
   * les
     * doupě (tady půjde farmit zlaťáky)
   * aréna
-  * !přístav
+  * přístav
     * cestovat do nové lokace s novým městem?
 
 ###Bojový systém
 * doupě
-  * !forma dungeonu
+  * forma dungeonu
     * mnoho místností (jednotlivé stránky)
     * mohl bys tady narazit na ostatní hráče        
 
-###!Povolání?
+###Povolání?
 * kovář 
   * možnost vytvořit nový předmět a prezentovat ho pro ostatní v tržnici
 * obchodník
   * možnost založit stánek v tržnici
 
-###!Zkušenosti?
-###!Achievmenty?
-###!Crafting?
+###Zkušenosti?
+###Achievmenty?
+###Crafting?
 ###Inventář
 * předměty budou klikatelné
-* !předměty budou mít svou 16x16 ikonku
+* !předměty budou mít svou 16x16 ikonku  ×
+###!Housing
 
