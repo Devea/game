@@ -12,22 +12,14 @@
 	<script type="text/javascript" src="js/account.js"></script>
 </head>
 <body>
-    <panel>
+    <div class="panel">
         
-    </panel>
-    <main>
+    </div>
+    <div class="main">
 		<div id="login"></div>
-    </main>
+    </div>
 	<script type="text/javascript">
 		account.init();
 	</script>
 </body>
 </html>
-<?php
-    /*session_start();
-    if(isset($_SESSION["login"])){
-        include("php/mysql_connect.php");
-        include("php/functions.php");
-    }*/
-	
-?>
