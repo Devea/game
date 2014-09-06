@@ -12,16 +12,25 @@ var account = {
 					slots[i].children[0].ondragstart = account.inventory.dragStart;
 					slots[i].children[0].ondragend = account.inventory.dragEnd;
 				}
+				for(var i=0; i<slots.length; i++){
+					slots[i].ondragover = function(e){e.preventDefault();};
+					slots[i].ondrop = account.inventory.drop;
+				}
 			});
 		},
 		dragStart: function(e){
 			console.log(e);
 			e.dataTransfer.effectAllowed = 'move';
-			e.dataTransfer.setData("text/plain", "test");
+			e.dataTransfer.setData("text/plain", e.target.parentElement.id);
 			setTimeout(function() { e.target.style.opacity = "0"; }, 0);
 		},
 		dragEnd: function(e){
 			e.target.style.opacity = "1";
+		},
+		drop: function(e){
+			e.preventDefault();
+			console.log(e);
+			e.target.appendChild(document.querySelector("#"+e.dataTransfer.getData("Text")).children[0]);
 		}
 	},
 	init: function(){
