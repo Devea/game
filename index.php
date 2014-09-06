@@ -15,7 +15,7 @@
     <div class="panel">
         
     </div>
-    <div class="main">
+    <div id="main">
 		<div id="login"></div>
     </div>
 	<script type="text/javascript">

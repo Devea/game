@@ -1,16 +1,36 @@
 var account = {
 	logged: false,
 	name: "",
-	inventory: [],
+	inventory: {
+		items: [],
+		getInventory: function(){
+			get("f=getInventory", function(r){
+				account.inventory.items = eval(r.querySelector("data").innerHTML);
+				var slots = document.querySelectorAll(".slot");
+				for(var i=0; i<account.inventory.items.length; i++){
+					slots[i].innerHTML = "<img src='img/items/"+account.inventory.items[i].name.toLowerCase()+".png' draggable='true'>";
+					slots[i].children[0].ondragstart = account.inventory.dragStart;
+					slots[i].children[0].ondragend = account.inventory.dragEnd;
+				}
+			});
+		},
+		dragStart: function(e){
+			console.log(e);
+			e.dataTransfer.effectAllowed = 'move';
+			e.dataTransfer.setData("text/plain", "test");
+			setTimeout(function() { e.target.style.opacity = "0"; }, 0);
+		},
+		dragEnd: function(e){
+			e.target.style.opacity = "1";
+		}
+	},
 	init: function(){
 		get("f=logged", function(r){
 			if(r.querySelector("logged").innerHTML == "true"){
-				document.querySelector("#login").innerHTML = "You're logged in!<br><button onclick='account.logout()'>Logout</button>";
+				account.drawLoggedContent();
 				account.name = r.querySelector("name").innerHTML;
 				account.logged = true;
-				get("f=getInventory", function(r){
-					account.inventory = eval(r.querySelector("data").innerHTML);
-				});
+				account.inventory.getInventory();
 			} else {
 				document.querySelector("#login").innerHTML = getContent("html/login.html");
 			}
@@ -21,10 +41,8 @@ var account = {
 			if(r.querySelector("data").innerHTML == "true"){
 				account.logged = true;
 				account.name = form.user.value;
-				document.querySelector("#login").innerHTML = "You're logged in!<br><button onclick='logout()'>Logout</button>";
-				get("f=getInventory", function(r){
-					account.inventory = eval(r.querySelector("data").innerHTML);
-				});
+				account.drawLoggedContent();
+				account.inventory.getInventory();
 			}
 			alert(r.querySelector("message").innerHTML);
 		});
@@ -35,5 +53,12 @@ var account = {
 			alert(r.querySelector("message").innerHTML);
 			document.querySelector("#login").innerHTML = getContent("html/login.html");
 		});
+	},
+	drawLoggedContent: function(){
+		document.querySelector("#login").innerHTML =  "You're logged in!<br><button onclick='account.logout()'>Logout</button>";
+		document.querySelector("#main").innerHTML += getContent("html/inventory.html");
+		for(var i=0; i<this.inventory.length; i++){
+			document.querySelector("#inventory").innerHTML += "<div class='item' draggable='true'>"+this.inventory[i].name+"</div>";
+		}
 	}
 }

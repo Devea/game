@@ -40,3 +40,12 @@ body {
     width: 33.33%;
     background: background;
 }
+
+.slot {
+	width: 32px;
+	height: 32px;
+	padding: 2px;
+	margin: 1px;
+	border: 1px solid gray;
+	float: left;
+}
