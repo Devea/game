@@ -6,11 +6,11 @@ var account = {
 		getInventory: function(){
 			get("f=getInventory", function(r){
 				account.inventory.items = eval(r.querySelector("data").innerHTML);
-				var slots = document.querySelectorAll(".slot");
 				for(var i=0; i<account.inventory.items.length; i++){
-					slots[i].innerHTML = "<img src='img/items/"+account.inventory.items[i].name.toLowerCase()+".png' draggable='true'>";
-					slots[i].children[0].ondragstart = account.inventory.dragStart;
-					slots[i].children[0].ondragend = account.inventory.dragEnd;
+					var slot = document.querySelector("#slot"+account.inventory.items[i].slot);
+					slot.innerHTML = "<img src='img/items/"+account.inventory.items[i].name.toLowerCase()+".png' title='"+account.inventory.items[i].name+"' data='"+account.inventory.items[i].id+"' draggable='true'>";
+					slot.children[0].ondragstart = account.inventory.dragStart;
+					slot.children[0].ondragend = account.inventory.dragEnd;
 				}
 			});
 		},
@@ -25,8 +25,16 @@ var account = {
 		drop: function(e){
 			e.preventDefault();
 			var item = document.querySelector("#"+e.dataTransfer.getData("Text")).children[0];
-			if(e.target.children.length == 0 && e.target.tagName.toLowerCase() != "img" && item.tagName.toLowerCase() == "img")
+			if(e.target.children.length == 0 && e.target.tagName.toLowerCase() != "img" && item.tagName.toLowerCase() == "img"){
+				account.inventory.moved(item.getAttribute("data"), item.parentElement.id.replace("slot",""), e.target.id.replace("slot",""));
 				e.target.appendChild(item);
+			}
+		},
+		moved: function(name, from, to){
+			console.log("Item "+name+" moved from "+from+" to "+to);
+			get("f=moveItem&name="+name+"&from="+from+"&to="+to, function(r){
+				console.log(r.querySelector("data").innerHTML);
+			});
 		}
 	},
 	init: function(){
@@ -37,7 +45,7 @@ var account = {
 				account.logged = true;
 				account.inventory.getInventory();
 			} else {
-				document.querySelector("#login").innerHTML = getContent("html/login.html");
+				document.querySelector("body").innerHTML = getContent("html/login.html");
 			}
 		});
 	},
@@ -56,15 +64,16 @@ var account = {
 	logout: function(){
 		get("f=logout", function(r){
 			alert(r.querySelector("message").innerHTML);
-			document.querySelector("#login").innerHTML = getContent("html/login.html");
+			document.querySelector("body").innerHTML = getContent("html/login.html");
 		});
 	},
 	drawLoggedContent: function(){
+		document.querySelector("body").innerHTML = getContent("html/game.html");
 		document.querySelector("#login").innerHTML =  "You're logged in!<br><button onclick='account.logout()'>Logout</button>";
-		document.querySelector("#main").innerHTML += getContent("html/inventory.html");
-		for(var i=0; i<this.inventory.length; i++){
+		//document.querySelector("#panel").innerHTML += getContent("html/inventory.html");
+		/*for(var i=0; i<this.inventory.length; i++){
 			document.querySelector("#inventory").innerHTML += "<div class='item' draggable='true'>"+this.inventory[i].name+"</div>";
-		}
+		}*/
 		var slots = document.querySelectorAll(".slot");
 		for(var i=0; i<slots.length; i++){
 			slots[i].ondragover = function(e){e.preventDefault();};

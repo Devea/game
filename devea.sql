@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: localhost
--- Vygenerováno: Pon 01. zář 2014, 15:50
+-- Vygenerováno: Ned 07. zář 2014, 15:30
 -- Verze serveru: 5.6.12-log
 -- Verze PHP: 5.4.12
 
@@ -32,7 +32,8 @@ CREATE TABLE IF NOT EXISTS `inventory` (
   `pid` int(11) NOT NULL,
   `iid` int(11) NOT NULL,
   `count` int(11) NOT NULL,
-  PRIMARY KEY (`pid`,`iid`),
+  `slot` int(11) NOT NULL,
+  PRIMARY KEY (`pid`,`slot`),
   KEY `pid` (`pid`),
   KEY `iid` (`iid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
@@ -41,8 +42,10 @@ CREATE TABLE IF NOT EXISTS `inventory` (
 -- Vypisuji data pro tabulku `inventory`
 --
 
-INSERT INTO `inventory` (`pid`, `iid`, `count`) VALUES
-(3, 1, 1);
+INSERT INTO `inventory` (`pid`, `iid`, `count`, `slot`) VALUES
+(2, 2, 6, 3),
+(2, 1, 1, 7),
+(3, 1, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -62,8 +65,8 @@ CREATE TABLE IF NOT EXISTS `items` (
 --
 
 INSERT INTO `items` (`id`, `name`, `description`) VALUES
-(1, 'Klacek', 'Prostě obyčejný dřevěný klacek, který se válel někde v lese.'),
-(2, 'Jablko', 'Krásné červené jablíčko.');
+(1, 'Stick', 'Just ordinary wooden stick.'),
+(2, 'Apple', 'Beautiful red apple.');
 
 -- --------------------------------------------------------
 
@@ -81,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   `registration_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=8 ;
 
 --
 -- Vypisuji data pro tabulku `players`
@@ -89,7 +92,8 @@ CREATE TABLE IF NOT EXISTS `players` (
 
 INSERT INTO `players` (`id`, `name`, `password`, `email`, `avatar`, `gold`, `registration_date`) VALUES
 (2, 'typekcz', '849b28dcbe2c37b2c60d994e5dbd4b21535d0701', 'typekcz@m1p.eu', NULL, 15, '2014-09-01 15:48:28'),
-(3, 'Sparkle', 'a1f1dc05a9c9d28eabfbc83e9f1bf3a0ed96b85b', '@', NULL, 100, '2014-09-01 15:49:36');
+(3, 'Sparkle', 'a1f1dc05a9c9d28eabfbc83e9f1bf3a0ed96b85b', '@', NULL, 100, '2014-09-01 15:49:36'),
+(7, 'looser', '56882bbedbd7003bf26275e79f748dd2f80b9844', 'looser@looser', 'R2D2-iconBE.png', 0, '2014-09-01 16:11:52');
 
 --
 -- Omezení pro exportované tabulky

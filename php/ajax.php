@@ -74,6 +74,13 @@ switch($_GET['f']){
 			echo "<message>You're not logged in!</message>";
 		}
 		break;
+	case "moveItem":
+		if(logged()){
+			echo "<data>".moveItem($_GET['name'], $_GET['from'], $_GET['to'])."</data>";
+		} else {
+			echo "<message>You're not logged in!</message>";
+		}
+		break;
 }
 
 echo "</main>";	
