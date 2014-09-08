@@ -19,6 +19,7 @@ body {
     left: 10%;
     top: 15%;
     border: black 1.5px solid;
+    background: white;
 }
 
 #statistics {

@@ -6,7 +6,7 @@ include("php/mysql_connect.php");
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/login.css" type="text/css">
+        <link rel="stylesheet" href="css/main.css" type="text/css">
         <title>login</title>
     </head>
     <body>
