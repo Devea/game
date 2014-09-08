@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;  
+    list-style: none;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background: url(../img/test_loginimg.jpg) no-repeat center bottom;
+    background-size: 100% 100%;
+}
+#login {
+    position: relative;
+    width: 400px;
+    padding: 15px;
+    left: 10%;
+    top: 15%;
+    border: black 1.5px solid;
+}
+
+#statistics {
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    max-height: 300px;
+    overflow: auto;
+
+}
+.caption {
+    background: bisque;
+
+}
+.table {
+    width: 100%;
+}
+.item {
+    width: 33.33%;
+    background: background;
+}
+
+.slot {
+	width: 32px;
+	height: 32px;
+	padding: 2px;
+	margin: 1px;
+	border: 1px solid gray;
+	float: left;
+}
