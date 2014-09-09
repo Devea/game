@@ -66,6 +66,6 @@ include("php/mysql_connect.php");
 					</table>-->
 				</div>
 			</div>
-		</div>
+		
     </body>
 </html>
