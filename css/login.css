@@ -1,0 +1,34 @@
+#login-page {
+	width: 100%;
+	min-height: 100%;
+	background: url(../img/test_loginimg.jpg) no-repeat center bottom;
+    background-size: cover;
+}
+
+#login-page #login {
+    position: relative;
+    width: 400px;
+    padding: 15px;
+    left: 10%;
+    top: 15%;
+    border: black 1.5px solid;
+    background: white;
+}
+
+#login-page #statistics {
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    max-height: 300px;
+    overflow: auto;
+
+}
+
+#login-page .caption {
+    background: bisque;
+
+}
+
+#login-page .table {
+    width: 100%;
+}
