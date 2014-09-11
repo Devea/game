@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 	<script type="text/javascript" src="js/ajax.js"></script>
 	<script type="text/javascript" src="js/account.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
 </head>
 <body>
     <div class="panel">

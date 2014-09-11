@@ -79,5 +79,6 @@ var account = {
 			slots[i].ondragover = function(e){e.preventDefault();};
 			slots[i].ondrop = account.inventory.drop;
 		}
+		game.init();
 	}
 }
