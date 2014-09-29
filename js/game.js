@@ -1,32 +1,59 @@
 //2133x1419
 
 var game = {
+	width: 0,
+	height: 0,
+	margin: 0,
+	img: null,
+	map: null,
+	main: null,
 	init: function(){
 		window.onresize = this.resize;
+		this.main = document.querySelector(".main");
+		this.img = document.querySelector(".main").querySelector("img");
+		this.map = document.querySelector(".main").querySelector("map");
+		//this.resize();
+		this.loadLocation("city");
+	},
+	loadLocation: function(loc){
+		var location = eval(getContent("js/locations/"+loc+".js"));
+		console.log(location);
+		this.width = location.img.width;
+		this.height = location.img.height;
+		this.margin = location.img.margin;
+		this.img.src = "img/"+location.img.src;
+		for(var i=0; i<location.map.length; i++){
+			var area = document.createElement("AREA");
+			area.shape = location.map[i].shape;
+			area.coords = "0,0,0,0";
+			area.href = "javascript:"+location.map[i].onclick;
+			area.setAttribute("data-coords",location.map[i].coords);
+			this.map.appendChild(area);
+		}
 		this.resize();
 	},
 	resize: function (){
-		var l = document.querySelector(".main");
-		var img = l.querySelector("img");
-		var map = l.querySelector("map");
-		var w = 2133;
-		var h = 1419;
-		if( (l.offsetWidth/l.offsetHeight) > (w/h) ){
-			img.style.width = "auto";
-			var margin = (l.offsetHeight/h)*500;
-			img.style.height = (l.offsetHeight+margin)+"px";
-			img.style.left = (l.offsetWidth/2-img.offsetWidth/2)+"px";
-			img.style.top = (margin/-2)+"px";
+		//var l = document.querySelector(".main");
+		//var img = l.querySelector("img");
+		//var map = l.querySelector("map");
+		//var w = 2133;
+		//var h = 1419;
+		if( (game.main.offsetWidth/game.main.offsetHeight) > (game.width/game.height) ){
+			game.img.style.width = "auto";
+			var m = (game.main.offsetHeight/game.height)*game.margin;
+			game.img.style.height = (game.main.offsetHeight+m)+"px";
+			game.img.style.left = (game.main.offsetWidth/2-game.img.offsetWidth/2)+"px";
+			game.img.style.top = (m/-2)+"px";
 		} else {
-			var margin = (l.offsetWidth/w)*500;
-			img.style.width = (l.offsetWidth+margin)+"px";
-			img.style.height = "auto";
-			img.style.left = (margin/-2)+"px";
-			img.style.top = (l.offsetHeight/2-img.offsetHeight/2)+"px";
+			var m = (game.main.offsetWidth/game.width)*game.margin;
+			game.img.style.width = (game.main.offsetWidth+m)+"px";
+			game.img.style.height = "auto";
+			game.img.style.left = (m/-2)+"px";
+			game.img.style.top = (game.main.offsetHeight/2-game.img.offsetHeight/2)+"px";
 		}
 		
-		for(var i=0; i<map.areas.length; i++){
-			var c = map.areas[i].getAttribute("data-coords").split(",");
+		for(var i=0; i<game.map.areas.length; i++){
+			var c = game.map.areas[i].getAttribute("data-coords").split(",");
 			/*if(map.areas[i].shape = "rect"){
 				var str = c[0]*img.offsetWidth + ",";
 				str += c[1]*img.offsetHeight + ",";
@@ -37,14 +64,13 @@ var game = {
 				var str = new String();
 				for(var j=0; j<c.length; j++){
 					if(j%2==0)
-						str += c[j]*img.offsetWidth;
+						str += c[j]*game.img.offsetWidth;
 					else
-						str += c[j]*img.offsetHeight;
+						str += c[j]*game.img.offsetHeight;
 					if(j<c.length-1)
 						str += ",";
 				}
-				map.areas[i].coords = str;
-				console.log(map.areas[i].coords);
+				game.map.areas[i].coords = str;
 			//}
 		}
 	}
