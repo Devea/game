@@ -12,12 +12,11 @@ var game = {
 		this.main = document.querySelector(".main");
 		this.img = document.querySelector(".main").querySelector("img");
 		this.map = document.querySelector(".main").querySelector("map");
-		//this.resize();
 		this.loadLocation("city");
+		this.resize();
 	},
 	loadLocation: function(loc){
 		var location = eval(getContent("js/locations/"+loc+".js"));
-		console.log(location);
 		this.width = location.img.width;
 		this.height = location.img.height;
 		this.margin = location.img.margin;
@@ -26,8 +25,14 @@ var game = {
 			var area = document.createElement("AREA");
 			area.shape = location.map[i].shape;
 			area.coords = "0,0,0,0";
-			area.href = "javascript:"+location.map[i].onclick;
 			area.setAttribute("data-coords",location.map[i].coords);
+			area.href = "javascript:"+location.map[i].onclick;
+			if(location.map[i].hovercontext){
+				area.setAttribute("data-hc",location.map[i].hovercontext);
+				area.onmouseover = function(e){hc.over(e)};
+				area.onmousemove = function(e){hc.move(e)};
+				area.onmouseout = function(e){hc.out(e)};
+			}
 			this.map.appendChild(area);
 		}
 		this.resize();

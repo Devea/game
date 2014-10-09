@@ -45,7 +45,7 @@ var account = {
 				account.logged = true;
 				account.inventory.getInventory();
 			} else {
-				document.querySelector("body").innerHTML = getContent("html/login.html");
+				document.querySelector("#body").innerHTML = getContent("html/login.html");
 			}
 		});
 	},
@@ -64,11 +64,11 @@ var account = {
 	logout: function(){
 		get("f=logout", function(r){
 			alert(r.querySelector("message").innerHTML);
-			document.querySelector("body").innerHTML = getContent("html/login.html");
+			document.querySelector("#body").innerHTML = getContent("html/login.html");
 		});
 	},
 	drawLoggedContent: function(){
-		document.querySelector("body").innerHTML = getContent("html/game.html");
+		document.querySelector("#body").innerHTML = getContent("html/game.html");
 		document.querySelector("#login").innerHTML =  "You're logged in!<br><button onclick='account.logout()'>Logout</button>";
 		//document.querySelector("#panel").innerHTML += getContent("html/inventory.html");
 		/*for(var i=0; i<this.inventory.length; i++){

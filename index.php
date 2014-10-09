@@ -11,16 +11,22 @@
 	<script type="text/javascript" src="js/ajax.js"></script>
 	<script type="text/javascript" src="js/account.js"></script>
 	<script type="text/javascript" src="js/game.js"></script>
-</head>
-<body>
-    <div class="panel">
-        
-    </div>
-    <div id="main">
-		<div id="login"></div>
-    </div>
+	<script type="text/javascript" src="js/hovercontext.js"></script>
 	<script type="text/javascript">
-		account.init();
+		function init(){
+			account.init();
+			hc.init();
+		}
 	</script>
+</head>
+<body onload="init()">
+	<div id="body">
+		<div class="panel">
+			
+		</div>
+		<div id="main">
+			<div id="login"></div>
+		</div>
+	</div>
 </body>
 </html>
